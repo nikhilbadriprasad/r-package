@@ -1,0 +1,19 @@
+Package: climr
+Type: Package
+Title: Analyse and plot the latest global and hemispheric climate data
+        using Gaussian Process
+Version: 1.1.1
+Authors@R: person("Nikhil","BP",email="nikhil.bp@ucdconnect.ie",role=c("aut","cre"))
+Description: Downloads, analyse and plots the latest climate data from NASA on a yearly time scale.
+    Performs Gaussian Process on said data and creates nice plots and optimise hyperparameters of Gaussian process using
+    optim function.
+Imports: dplyr, readr, magrittr, stats, ggplot2, tibble, viridis,
+        mvtnorm
+License: GPL (>=2)
+Encoding: UTF-8
+LazyData: TRUE
+RoxygenNote: 7.1.1
+NeedsCompilation: no
+Packaged: 2020-07-22 18:15:35 UTC; NIKHIL BADRI PRASAD
+Author: Nikhil BP [aut, cre]
+Maintainer: Nikhil BP <nikhil.bp@ucdconnect.ie>
