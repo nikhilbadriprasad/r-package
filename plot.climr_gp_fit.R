@@ -4,8 +4,8 @@
 #' @param time_grid  An optional time grid over which to produce fitted values of the model
 #' @param ... Other arguments to plot (not currently implemented)
 #'
-#' @return Nothing: just a nice plot
-#' @seealso \code{\link{load_clim}}, \code{\link{gp_fit}}
+#' @return A nice plot to illustrate the output of gp_fit as a scatterplot, and the smoothed Gaussian process regression line
+#' @seealso \code{\link{load_clim}}, \code{\link{gp_fit}}, \code{\link{plot.climr_fit}}, \code{\link{fit}}
 #' @export
 #' @import ggplot2
 #' @importFrom stats "sd" "optim"
@@ -27,7 +27,7 @@ plot.climr_gp_fit <- function(x, time_grid = pretty(x$data$year, n = 100), ...) 
   # Get the data set out
   df <- x$data
 
-  # Get some predicted values based on the time_grid
+  # For predicted values based on the time_grid
   if(x$method == 'Nelder-Mead') {
     fits <- tibble(time_grid, x$model)
   } else if(x$method == 'BFGS') {

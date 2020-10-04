@@ -9,7 +9,7 @@
 #' @importFrom dplyr "mutate" "select" "arrange"
 #' @importFrom readr "read_csv"
 #'
-#' @seealso \code{\link{gp_fit}}, \code{\link{plot.climr_gp_fit}}
+#' @seealso \code{\link{gp_fit}}, \code{\link{plot.climr_gp_fit}},\code{\link{plot.climr_fit}}, \code{\link{fit}}
 #' @examples
 #' data = load_clim(type='SH')
 load_clim <- function(type = c('GLB', 'NH', 'SH')) {
@@ -25,10 +25,10 @@ load_clim <- function(type = c('GLB', 'NH', 'SH')) {
 
   # Read in the data (read_cv comes from the readr package)
   out <- read_csv(url,
-                  skip = 1,
-                  na = '*',
-                  col_types = paste(c('i', rep('d', 18)), collapse = ''),
-                  progress = FALSE)
+                 skip = 1,
+                 na = '***',
+                 col_types = paste(c('i', rep('d', 18)), collapse = ''),
+                 progress = FALSE)
 
   # Sort out yearly data
   out_year <- out %>% na.omit() %>%
